@@ -1,0 +1,92 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.140'
+}
+
+version = "${mod_version}+mc${minecraft_version}"
+group = mod_group
+
+base {
+    archivesName = mod_id
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(java_version as int)
+}
+
+repositories {
+    mavenCentral()
+    maven { name = 'NeoForged'; url = 'https://maven.neoforged.net/releases' }
+    maven { name = 'Create';    url = 'https://maven.createmod.net' }
+    maven { name = 'Registrate'; url = 'https://mvn.devos.one/snapshots' }
+    maven { name = 'Sable';     url = 'https://maven.ryanhcode.dev/releases' }
+    maven { name = 'BlameJared'; url = 'https://maven.blamejared.com/' }
+}
+
+neoForge {
+    version = neoforge_version
+
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    // Sable — physics sub-level library (provides BlockEntitySubLevelPropellerActor)
+    implementation("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}") {
+        exclude group: 'foundry.veil'
+        exclude group: 'com.tterrag.registrate'
+    }
+
+    // Create — for CreateRegistrate + style consistency
+    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}") {
+        transitive = false
+    }
+
+    // Registrate
+    implementation("com.tterrag.registrate:Registrate:${registrate_version}")
+
+    // Flywheel (Create transitive; declare explicitly since we excluded Create's transitives)
+    implementation("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def replaceProperties = [
+            mod_id            : mod_id,
+            mod_name          : mod_name,
+            mod_version       : project.version,
+            mod_authors       : mod_authors,
+            minecraft_version : minecraft_version,
+            neoforge_required : neoforge_required,
+            create_required   : create_required,
+            sable_required    : sable_required,
+    ]
+    inputs.properties replaceProperties
+    filesMatching(['META-INF/neoforge.mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties
+    }
+}
+
+tasks.named('compileJava', JavaCompile).configure {
+    options.encoding = 'UTF-8'
+    options.release = java_version as int
+}

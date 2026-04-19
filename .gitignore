@@ -1,0 +1,41 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.eclipse/
+.settings/
+.classpath
+.project
+.apt_generated
+.factorypath
+out/
+bin/
+
+# NeoForge dev runs
+run/
+runs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Local scratch / personal notes
+ideas.md
+NOTES.md
+TODO.local.md
+
+# Compiled
+*.class
