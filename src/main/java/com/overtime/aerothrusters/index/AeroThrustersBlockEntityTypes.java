@@ -9,7 +9,7 @@ public class AeroThrustersBlockEntityTypes {
     public static final BlockEntityEntry<ThrusterBlockEntity> THRUSTER =
             AeroThrusters.registrate()
                     .blockEntity("thruster", ThrusterBlockEntity::new)
-                    .validBlocks(AeroThrustersBlocks.THRUSTER)
+                    .validBlocks(AeroThrustersBlocks.THRUSTER, AeroThrustersBlocks.ADVANCED_THRUSTER, AeroThrustersBlocks.SUPERIOR_THRUSTER)
                     .register();
 
     public static void init() {

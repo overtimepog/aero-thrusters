@@ -1,12 +1,10 @@
 {
-  "parent": "block/cube",
+  "parent": "aerothrusters:block/thruster_base",
   "textures": {
     "particle": "aerothrusters:block/thruster_side",
-    "down":  "aerothrusters:block/thruster_side",
-    "up":    "aerothrusters:block/thruster_side",
-    "north": "aerothrusters:block/thruster_front",
-    "south": "aerothrusters:block/thruster_side",
-    "east":  "aerothrusters:block/thruster_side",
-    "west":  "aerothrusters:block/thruster_side"
+    "side": "aerothrusters:block/thruster_side",
+    "front": "aerothrusters:block/thruster_front",
+    "nozzle": "aerothrusters:block/thruster_nozzle",
+    "dark": "aerothrusters:block/thruster_side"
   }
 }

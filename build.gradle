@@ -67,6 +67,9 @@ dependencies {
 
     // Flywheel (Create transitive; declare explicitly since we excluded Create's transitives)
     implementation("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
+
+    // Ponder (Create transitive; bundles catnip — needed for SmartBlockEntity / KineticBlockEntity chain)
+    implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}")
 }
 
 tasks.named('processResources', ProcessResources).configure {

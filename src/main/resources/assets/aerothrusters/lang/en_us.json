@@ -1,4 +1,35 @@
 {
   "block.aerothrusters.thruster": "Thruster",
-  "itemGroup.aerothrusters": "Aero Thrusters"
+  "block.aerothrusters.advanced_thruster": "Advanced Thruster",
+  "block.aerothrusters.superior_thruster": "Superior Thruster",
+  "itemGroup.aerothrusters": "Create: AeroThrusters",
+  "itemGroup.aerothrusters.main": "Create: AeroThrusters",
+
+  "tooltip.aerothrusters.thruster.header": "Thruster",
+  "tooltip.aerothrusters.thruster.status": "Status:",
+  "tooltip.aerothrusters.thruster.status.active": "Firing",
+  "tooltip.aerothrusters.thruster.status.idle": "Idle",
+  "tooltip.aerothrusters.thruster.status.no_fuel": "No Fuel",
+  "tooltip.aerothrusters.thruster.throttle": "Throttle:",
+  "tooltip.aerothrusters.thruster.signal": "(signal %s/15)",
+  "tooltip.aerothrusters.thruster.thrust": "Thrust:",
+  "tooltip.aerothrusters.thruster.burn": "Burn Rate:",
+  "tooltip.aerothrusters.thruster.airflow_limit": "Airflow Cutoff:",
+  "tooltip.aerothrusters.thruster.fuel": "Fuel",
+  "tooltip.aerothrusters.thruster.empty": "Empty",
+  "tooltip.aerothrusters.thruster.hover": "%s%% \u2022 %s/%s mB",
+  "tooltip.aerothrusters.thruster.hover_binary": "%s \u2022 %s/%s mB",
+  "tooltip.aerothrusters.thruster.mode": "Mode:",
+  "tooltip.aerothrusters.thruster.mode.analog": "Analog",
+  "tooltip.aerothrusters.thruster.mode.binary": "Binary",
+
+  "aerothrusters.ponder.thruster_overview.header": "Thruster",
+  "aerothrusters.ponder.thruster_overview.text_1": "Thrusters burn liquid fuel to produce directional thrust",
+  "aerothrusters.ponder.thruster_overview.text_2": "Any '#c:fuel' tagged fluid works. A pump moves it from the tank into the thruster",
+  "aerothrusters.ponder.thruster_overview.text_3": "Any rotational source works. A Cogwheel linking the pump's axle is one clean option",
+  "aerothrusters.ponder.thruster_overview.text_4": "An Analog Lever (or any analog redstone signal) acts as the throttle",
+  "aerothrusters.ponder.thruster_overview.text_5": "Stronger signals burn more fuel per tick and push harder",
+  "aerothrusters.ponder.thruster_overview.text_6": "Drop the signal to zero and the engine shuts off. No burn, no thrust",
+  "aerothrusters.ponder.thruster_overview.text_7": "Shift-right-click with a Wrench to toggle Binary mode",
+  "aerothrusters.ponder.thruster_overview.text_8": "In Binary mode, the thruster runs at full power whenever it receives any redstone signal"
 }

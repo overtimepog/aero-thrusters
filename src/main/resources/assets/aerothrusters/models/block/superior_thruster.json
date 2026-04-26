@@ -1,0 +1,10 @@
+{
+  "parent": "aerothrusters:block/thruster_base",
+  "textures": {
+    "particle": "aerothrusters:block/superior_thruster_side",
+    "side": "aerothrusters:block/superior_thruster_side",
+    "front": "aerothrusters:block/superior_thruster_front",
+    "nozzle": "aerothrusters:block/superior_thruster_nozzle",
+    "dark": "aerothrusters:block/superior_thruster_side"
+  }
+}
